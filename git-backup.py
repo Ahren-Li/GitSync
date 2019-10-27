@@ -61,11 +61,12 @@ def do_backup(path):
             break
         line = line.replace('\n', '')
         line_split = line.split(' ')
+        git_path = path
         if len(line_split) > 1 and line_split[1]:
-            path = path + "/" + line_split[1]
-            if not os.path.exists(path):
-                os.makedirs(path, 0o664)
-        do_git(path, line_split[0])
+            git_path = git_path + "/" + line_split[1]
+            if not os.path.exists(git_path):
+                os.makedirs(git_path, 0o664)
+        do_git(git_path, line_split[0])
     git_list.close()
 
 
