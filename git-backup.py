@@ -1,8 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from __future__ import print_function
 import os
 import sys
+
+if os.path.dirname(__file__):
+    os.chdir(os.path.dirname(__file__))
 
 from git import Repo
 from git import RemoteProgress
